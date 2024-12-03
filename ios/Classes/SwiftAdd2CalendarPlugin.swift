@@ -117,6 +117,12 @@ public class SwiftAdd2CalendarPlugin: NSObject, FlutterPlugin {
         case .denied, .restricted:
             // Auth denied or restricted
             completion?(false)
+        case .fullAccess:
+            completion?(false)
+        case .writeOnly:
+            completion?(false)
+        @unknown default:
+            completion?(false)
         }
     }
     
